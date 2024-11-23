@@ -1,0 +1,15 @@
+[submodule "redmine-plugins/redmine_checklists"]
+	path = redmine-plugins/redmine_checklists
+	url = https://github.com/negiganaito/redmine_checklists.git
+[submodule "redmine-plugins/redmine_questions"]
+	path = redmine-plugins/redmine_questions
+	url = https://github.com/negiganaito/redmine_questions.git
+[submodule "redmine-plugins/redmine_people"]
+	path = redmine-plugins/redmine_people
+	url = https://github.com/negiganaito/redmine_people.git
+[submodule "redmine-plugins/redmine_contacts"]
+	path = redmine-plugins/redmine_contacts
+	url = https://github.com/negiganaito/redmine_contacts.git
+[submodule "redmine-plugins/redmine-agile"]
+	path = redmine-plugins/redmine-agile
+	url = https://github.com/negiganaito/redmine-agile.git
