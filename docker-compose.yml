@@ -1,0 +1,36 @@
+networks:
+  redmine-network:
+
+volumes:
+  redmine-plugins:
+  redmine-themes:
+  redmine-data:
+
+services:
+  mysql_redmine:
+    image: mysql:5.7
+    networks:
+      - redmine-network
+    volumes:
+      - ./mysql-data_red:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_DATABASE=redmine
+
+  redmine:
+    image: redmine
+    ports:
+      - 3000:3000
+    networks:
+      - redmine-network
+    volumes:
+      - ./redmine-plugins:/usr/src/redmine/plugins
+      - './themes:/usr/src/redmine/themes'
+      - redmine-data:/usr/src/redmine/files
+    environment:
+      # Host name matches the MySQL container name.
+      - REDMINE_DB_MYSQL=mysql_redmine
+      - REDMINE_DB_USERNAME=root
+      - REDMINE_DB_PASSWORD=pass
+      - REDMINE_PLUGINS_MIGRATE=true
+    restart: always
